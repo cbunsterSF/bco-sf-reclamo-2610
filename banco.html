@@ -5231,7 +5231,7 @@ function stopPoll(){if(poll){clearInterval(poll);poll=null;}}
 /* panel: lo que pasa en Salesforce */
 function side(){
   const n=scr==='inicio'||scr==='detalle'?0:scr==='form'||scr==='enviando'?1:info&&info.cerrado?5:4;
-  const st=(i,t,s,em)=>'<li class="'+(n>i?'q-dn':n===i?'q-ac':'')+'"><span class="q-d">'+(n>i?'✓':i+1)+'</span><div><b>'+t+'</b><span>'+s+'</span>'+(em&&n>i?'<em>'+esc(em)+'</em>':'')+'</div></li>';
+  const st=(i,t,s,em)=>'<li class="'+(n>i?'q-dn':n===i?'q-ac':'')+'"><span class="q-d">'+(n>i?'✓':i+1)+'</span><div><b>'+t+'</b><span>'+s+'</span>'+(em&&n>=i?'<em>'+esc(em)+'</em>':'')+'</div></li>';
   const sfUrl=caso&&CFG.org?CFG.org+'/lightning/r/Case/'+encodeURIComponent(caso.caseId)+'/view':'';
   bs.innerHTML='<div class="q-ey"><i aria-hidden="true"></i>En vivo · Salesforce</div><h3>Lo que pasa detrás de la app</h3>'+
   '<p>Cada paso del cliente queda registrado en Service Cloud, en tiempo real.</p><ul class="q-st">'+
